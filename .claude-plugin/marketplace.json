@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "heat-pump-skill",
+  "description": "Heat pump sizing and troubleshooting skill for Claude",
+  "owner": {
+    "name": "Marin Basic",
+    "email": "marin.basic02@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "heat-pump",
+      "description": "Size and troubleshoot residential air-to-water heat pump systems.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

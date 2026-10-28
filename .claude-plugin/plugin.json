@@ -1,0 +1,21 @@
+{
+  "name": "heat-pump",
+  "version": "1.0.0",
+  "description": "Size and troubleshoot residential air-to-water heat pump systems: heat loss, oversizing and modulation, flow rates, pipes, system volume, buffers, balancing and DHW tanks.",
+  "author": {
+    "name": "Marin Basic",
+    "email": "marin.basic02@gmail.com"
+  },
+  "homepage": "https://github.com/MarinX/heat-pump-skill",
+  "repository": "https://github.com/MarinX/heat-pump-skill",
+  "license": "MIT",
+  "keywords": [
+    "heat-pump",
+    "hvac",
+    "heat-loss",
+    "sizing",
+    "hydraulics",
+    "croatia"
+  ],
+  "icon": "./assets/icon.jpg"
+}
