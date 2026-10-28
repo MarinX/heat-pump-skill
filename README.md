@@ -18,6 +18,13 @@ When a question goes beyond what the skill covers, Claude says so instead of gue
 
 Updates come through the marketplace. The skill is available as `heat-pump:heat-pump`.
 
+### Claude (desktop or web)
+
+1. Download **[heat-pump.zip](https://github.com/MarinX/heat-pump-skill/releases/latest/download/heat-pump.zip)** from the [latest release](https://github.com/MarinX/heat-pump-skill/releases/latest).
+2. In Claude, open **Settings > Features** and upload the ZIP under Skills.
+
+This needs a Pro, Max, Team or Enterprise plan with **code execution** turned on, because the skill runs its calculator in Claude's code sandbox. Uploaded skills apply only to your account.
+
 ### Skills CLI (Claude Code, Cursor, OpenCode and other agents)
 
 ```bash
@@ -91,6 +98,7 @@ Run `python3 skills/heat-pump/scripts/heat_calc.py --help` for all subcommands, 
 
 ```
 heat-pump-skill/
+├── .github/workflows/release.yml   # On a vX.Y.Z tag: test, zip skills/heat-pump, publish a GitHub release
 ├── .claude-plugin/
 │   ├── plugin.json              # Plugin manifest
 │   └── marketplace.json         # Lets Claude Code install it from this repo
@@ -123,6 +131,16 @@ claude plugin eval . --allow-tools "Bash(python3:*)" --no-publish
 ```
 
 The evals run the calculator inside Claude Code's sandbox. On Linux, that needs `bubblewrap` and `socat` installed.
+
+### Releasing
+
+Bump `version` in `.claude-plugin/plugin.json`, commit, then tag and push:
+
+```bash
+git tag v1.0.0 && git push origin v1.0.0
+```
+
+The release workflow checks the tag matches the plugin version, runs the calculator self-test, and publishes a GitHub release with `heat-pump.zip` attached.
 
 ## License
 
